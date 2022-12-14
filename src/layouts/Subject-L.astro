@@ -1,0 +1,49 @@
+---
+import Header from "../components/Header.astro";
+import BaseHead from "../components/BaseHead.astro";
+import "../styles/prism.css";
+import Prismc from "../components/Prismc.astro";
+export interface Props {
+  title: string;
+  description: string;
+}
+
+const { title } = Astro.props;
+const { description } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <BaseHead title={title} description={description} />
+  </head>
+  <body>
+    <Header />
+    <main class="container">
+      <slot />
+    </main>
+    <footer>
+      <p>
+        <a href="https://developer.mozilla.org/es/docs/Web/JavaScript"
+          >Basado en MDN</a
+        >
+      </p>
+      <Prismc codep="^_~" />
+    </footer>
+    <style>
+      footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 80px;
+        background-color: #000;
+      }
+      footer p a {
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 1.2rem;
+        margin-right: 10px;
+      }
+    </style>
+  </body>
+</html>

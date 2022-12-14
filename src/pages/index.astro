@@ -1,0 +1,30 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Blocks from "../components/Blocks.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
+---
+
+<Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+  <section>
+    <h1 class="display-1 txtCenter">{SITE_TITLE}</h1>
+    <p class="txtJustify">{SITE_DESCRIPTION}</p>
+
+    <ul role="list" class="link-card-grid">
+      <Blocks
+        href="/Basic-js"
+        title="JavaScript Basico"
+        body="Aprende lo basico del lenguaje."
+      />
+	  <Blocks
+        href=""
+        title="JavaScript Intermedio"
+        body="Proximamente..."
+      />
+	  <Blocks
+        href=""
+        title="JavaScript Orientada a Objetos"
+        body="Proximamente..."
+      />
+    </ul>
+</section>
+</Layout>

@@ -1,0 +1,58 @@
+---
+import SubjectL from "../../layouts/Subject-L.astro";
+import ProgressBar from "../../components/ProgressBar.astro";
+import BaseNav from "../../components/BaseNav.astro";
+const title = "Operadores";
+const description = "Los operadores son símbolos que nos permiten realizar operaciones matemáticas, comparaciones, lógicas, etc.";
+---
+
+<SubjectL title={"APJS-"+title} description={description}>
+  <ProgressBar progress="32" />
+  <section class="container">
+    <h2>{title}</h2>
+    <div class="card container">
+      <span class="txt-yellow">Nota</span>
+      <p class="txtJustify">
+        Los operadores son símbolos que nos permiten realizar operaciones
+        matemáticas, comparaciones, lógicas, etc.
+      </p>
+    </div>
+    <div>
+      <div class="card container">
+        <span class="txt-blue">Operadores Logicos</span>
+        <p class="txtJustify">
+          Los operadores lógicos nos permiten realizar comparaciones entre
+          operaciones. Nos ayudan a evaluar ciertas condiciones. Los más comunes
+          son:
+        </p>
+        <pre><code class="language-js">== /* Igualdad: si un valor es igual a otro*/ 
+=== /*Triple igual: si el valor es igual y ademas son el mismo tipo*/
+!= /*Diferente: si un valor es diferente a otro*/
+!== /*Triple diferente: si un valor es diferente y ademas son de diferente tipo*/
+> /*Mayor que: si el valor izquierdo es mayor que el derecho*/ 
+>= /*Mayor o igual que: si el valor izquierdo es mayor o igual que el derecho*/
+< /*Menor que: si el valor izquierdo es menor que el derecho*/
+<= /*Menor o igual que: si el valor izquierdo es menor o igual que el derecho*/
+&& /*Y: si ambos valores son verdaderos*/
+|| /*O: si alguno de los valores es verdadero*/
+! /*Negacion: si el valor es falso*/</code></pre>
+      </div>
+      <div class="card container">
+        <span class="txt-blue">Operadores Aritméticos</span>
+        <p class="txtJustify">
+          Los operadores aritméticos nos permiten realizar operaciones con las
+          variables y valores. los más comunes son:
+        </p>
+        <pre><code class="language-js">+ /*Suma: suma dos valores*/
+- /*Resta: resta dos valores*/
+/ /*Division: divide dos valores*/
+* /*Multiplicacion: multiplica dos valores*/
+% /*Modulo: devuelve el resto de la division de dos valores*/
+++ /*Incremento: incrementa en 1 el valor*/
+-- /*Decremento: decrementa en 1 el valor*/
+** /*Exponente: eleva un valor a la potencia de otro valor*/</code></pre>
+      </div>
+    </div>
+  </section>
+  <BaseNav pageNum={3} />
+</SubjectL>

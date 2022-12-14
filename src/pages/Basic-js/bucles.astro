@@ -1,0 +1,73 @@
+---
+import SubjectL from "../../layouts/Subject-L.astro";
+import ProgressBar from "../../components/ProgressBar.astro";
+import BaseNav from "../../components/BaseNav.astro";
+const title = "Bucles";
+const description =
+  "Los bucles son estructuras de control que nos permiten ejecutar un bloque de código repetidas veces. En JavaScript tenemos 3 tipos de bucles que son: for, while y do while.";
+---
+
+<SubjectL title={"APJS-" + title} description={description}>
+  <ProgressBar progress="66" />
+  <section class="container">
+    <h2>{title}</h2>
+    <div class="card container-lg">
+      <span class="txt-yellow">Nota</span>
+      <p class="txtJustify">
+        Los bucles son estructuras de control que nos permiten ejecutar un
+        bloque de código repetidas veces. En JavaScript tenemos 3 tipos de
+        bucles que son: <span class="txt-green">for</span>,
+        <span class="txt-green">while</span> y
+        <span class="txt-green">do while</span>.
+      </p>
+    </div>
+    <div class="card container-lg">
+      <span class="txt-blue">while</span>
+      <p class="txtJustify">
+        La palabra reservada <span class="txt-green">while</span> nos permite ejecutar
+        un bloque de código repetidas veces, hasta que se cumpla una condición. Un
+        ejemplo sería que tu entrenador te pone a correr 10 vueltas al campo y no
+        puedes descansar mientras no termines las 10 vueltas.
+      </p>
+      <pre><code class="language-js">let vueltas=0; //Declarando la variable vueltas
+while(vueltas < 10)&lbrace; //Evaluando la condicion
+// si cumple la condicion se ejecuta este bloque de codigo
+console.log("Vuelta: " + vueltas); 
+vueltas++; //Incrementando el contador
+&rbrace;
+console.log("Terminaste las 10 vueltas"); //Se ejecuta una vez que termine el ciclo</code></pre>
+    </div>
+    <div class="card container-lg">
+      <span class="txt-blue">do while</span>
+      <p class="txtJustify">
+        La palabra reservada <span class="txt-green">do while</span> nos permite
+        ejecutar un bloque de código repetidas veces, hasta que se cumpla una condición,
+        pero nos permite ejecutar el código al menos 1 vez ya que la condición es
+        al final.
+      </p>
+      <pre><code class="language-js">let vueltas=0; //Declarando la variable vueltas
+do&lbrace; 
+// si cumple la condicion se ejecuta este bloque de codigo
+console.log("Vuelta: " + vueltas);
+vueltas++; //Incrementando el contador
+&rbrace;while(vueltas < 10); //Evaluando la condicion
+console.log("Terminaste las 10 vueltas"); //Se ejecuta una vez que termine el ciclo</code></pre>
+    </div>
+    <div class="card container-lg">
+      <span class="txt-blue">for</span>
+      <p class="txtJustify">
+        La palabra reservada <span class="txt-green">for</span> nos permite ejecutar
+        un bloque de código repetidas veces, al igual que el while y do while, pero
+        nos permite declarar e incrementar el contador en la misma línea, y al igual
+        que el while se evalúa primero la condición.
+      </p>
+      <pre><code class="language-js">// la estructura es: for ( declaramos un contador; evaluamos la condicion; incrementamos el contador)
+for(let vueltas = 0; vueltas < 10; vueltas++)&lbrace; //Evaluando la condicion
+// si cumple la condicion se ejecuta este bloque de codigo
+console.log("Vuelta: " + vueltas); 
+&rbrace;
+console.log("Terminaste las 10 vueltas"); //Se ejecuta una vez que termine el ciclo</code></pre>
+    </div>
+  </section>
+  <BaseNav pageNum={5} />
+</SubjectL>

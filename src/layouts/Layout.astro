@@ -1,0 +1,24 @@
+---
+import Header from '../components/Header.astro';
+import BaseHead from '../components/BaseHead.astro';
+export interface Props {
+	title: string;
+	description: string;
+}
+
+const { title } = Astro.props;
+const {description} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <BaseHead title={title} description={description} />
+  </head>
+  <body>
+    <Header />
+    <main class="container">
+	  <slot />
+	</main>
+  </body>
+</html>

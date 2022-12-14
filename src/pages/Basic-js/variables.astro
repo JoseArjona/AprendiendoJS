@@ -1,0 +1,54 @@
+---
+import SubjectL from "../../layouts/Subject-L.astro";
+import ProgressBar from "../../components/ProgressBar.astro";
+import BaseNav from "../../components/BaseNav.astro";
+const title = "Variables";
+const description =
+  "Las variables nos sirven como una forma de guardar valores";
+---
+
+<SubjectL title={"APJS-" + title} description={description}>
+  <ProgressBar progress="16" />
+  <section class="container">
+    <h2>Variables</h2>
+    <div class="card container-lg">
+      <span class="txt-yellow">Nota</span>
+      <p class="txtJustify">
+        Las variables nos sirven como una forma de guardar valores. Las
+        variables no pueden ser nombradas empezando con números, ni con
+        símbolos, los únicos símbolos aceptados son:
+        <span class="txt-green">$</span> y<span class="txt-green">
+          guiones bajos</span
+        >. <br />Una buena práctica es usar
+        <span class="txt-orange">camelCase</span> para nombrar las variables; es
+        decir que la primera letra de la variable sea minúscula y la primera letra
+        de cada palabra posterior sea mayúscula.
+      </p>
+      <pre><code class="language-js">let camelCase="Declarando camelCase"</code></pre>
+    </div>
+    <div class="grid col-2 md-col-1 sm-col-1">
+      <div class="card">
+        <span class="txt-blue">let</span>
+        <p class="txtJustify">
+          La palabra reservada let nos permite declarar una variable, la cual
+          puede ser modificada. Se usa para poder guardar datos que pueden
+          <span class="txt-orange">'variar'</span> que pueden cambiar.
+        </p>
+        <pre><code class="language-js">let variable="Hola soy una variable"
+// Tambien podemos crear varias variables en una sola linea separando con una coma
+let nombre="Juan", edad=20, sexo="Masculino";</code></pre>
+      </div>
+      <div class="card">
+        <span class="txt-blue">const</span>
+        <p class="txtJustify">
+          La palabra reservada const nos permite declarar una variable, la cual
+          no puede ser modificada, su valor sera
+          <span class="txt-orange">'constante'</span>,dicho de otra manera, se
+          mantendrá.
+        </p>
+        <pre><code class="language-js">const pi=3.1415</code></pre>
+      </div>
+    </div>
+  </section>
+  <BaseNav pageNum={2} />
+</SubjectL>

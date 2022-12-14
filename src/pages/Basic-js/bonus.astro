@@ -1,0 +1,47 @@
+---
+import SubjectL from "../../layouts/Subject-L.astro";
+import ProgressBar from "../../components/ProgressBar.astro";
+import BaseNav from "../../components/BaseNav.astro";
+const title = "Interacciones Bonus";
+const description = "Interacciones simples con el navegador";
+---
+
+<SubjectL title={"APJS-" + title} description={description}>
+  <ProgressBar progress="100" />
+  <section class="container">
+    <h2>Bonus ~ Interacciones</h2>
+    <div class="card container-lg">
+      <span class="txt-yellow">Nota</span>
+      <p class="txtJustify">
+        Existen 2 formas sencillas de interactuar con el navegador y con el
+        usuario, y para ello hacemos uso de las siguientes funciones: La primera
+        es <span class="txt-orange">prompt()</span> y la segunda es <span
+          class="txt-orange">alert()</span
+        >
+      </p>
+    </div>
+    <div class="card container-lg">
+      <span class="txt-blue">prompt()</span>
+      <p class="txtJustify">
+        Esta función nos permite mostrar un mensaje al usuario y esperar que
+        este ingrese un valor. El valor ingresado por el usuario se guarda en
+        una variable.
+      </p>
+      <pre><code class="language-js "> let nombre = prompt("Dame tu nombre")</code></pre>
+      <p class="txtJustify">
+        Esto abrira una ventana emergente en el navegador con el mensaje que le
+        dimos en el prompt. El usuario podra ingresar un valor y este se
+        guardara en la variable asignada , en este caso nombre.
+      </p>
+    </div>
+    <div class="card container-lg">
+      <span class="txt-blue">alert()</span>
+      <p class="txtJustify">
+        Esta función nos permite mostrar un mensaje al usuario. No espera que el
+        usuario ingrese un valor.
+      </p>
+      <pre><code class="language-js"> alert("Hola soy una alerta");</code></pre>
+    </div>
+  </section>
+  <BaseNav pageNum={7} />
+</SubjectL>

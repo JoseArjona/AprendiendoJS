@@ -1,0 +1,232 @@
+---
+import SubjectL from "../../layouts/Subject-L.astro";
+import BaseNav from "../../components/BaseNav.astro";
+import ShowSolution from "../../components/ShowSolution.astro";
+const title = "Reto Final";
+const description =
+  "En esta seccion aprenderemos a crear un juego de piedra, papel o tijera";
+---
+
+<SubjectL title={"APJS-" + title} description={description}>
+  <h1 class="display-3 txtCenter">
+    Felicidades has completado la lección ! 🎊
+  </h1>
+  <section class="container">
+    <h2>{title}</h2>
+    <div class="card container-lg">
+      <span class="txt-yellow"
+        >Crear el juego de piedra 🪨, papel📄 o tijera ✂️</span
+      >
+      <p class="txtJustify">
+        En esta sección aprenderemos a crear un juego de piedra, papel o tijera
+        en el cual el usuario podrá elegir una de las 3 opciones y el programa
+        escogerá una de las 3 opciones de manera aleatoria, y se mostrará quién
+        ganó la partida. Tu tarea será completar el código según lo aprendido.
+        Observación: si el comentario inicia con un * significa que debes
+        completar lo que pida, de lo contrario es un simple comentario para
+        entender el código.
+      </p>
+    </div>
+    <div class="card container-lg">
+      <span class="txt-blue"
+        >Piedra Papel o tij... completa ~ Usando Variables y funciones</span
+      >
+      <p class="txtJustify">
+        Completa el código que falte para que el programa pueda funcionar.
+        Suerte! al final tendrás el código completo. Te recomiendo que uses un
+        editor y vayas siguiendo la actividad desde ahí.
+        <br />
+        <br />
+        Empecemos declarando unas variables, sabemos que la mejor forma de declarar
+        una variable con varios datos es un arreglo y en el juego tenemos 3 opciones.
+        Completa el código:
+      </p>
+      <pre><code class="language-js">//*declara un arreglo con las opciones del juego piedra papel y tijera
+//Una vez declarado el arreglo, declaramos una variable que guarde la opcion del usuario.
+const opcionUsuario = //*usa la funcion correspondiente para pedirle al usuario que ingrese una opcion
+</code></pre>
+      <ShowSolution
+        content="const opciones = ['piedra', 'papel', 'tijera'];//Declarando las opciones del juego \nconst opcionUsuario = prompt('Elige una opcion: piedra, papel o tijera'); //Declarando la opcion del usuario"
+      />
+      <br />
+      Una vez teniendo esto necesitamos generar una opcion aleatoria para la maquina,
+      para esto usaremos la funcion Math.random() y Math.floor() para redondear el
+      numero.
+      <pre><code class="language-js">const opcionMaquina = opciones[Math.floor(Math.random() * 3)]; //Declarando la opcion de la maquina</code></pre>
+    </div>
+    <div class="card container-lg">
+      <span class="txt-blue"
+        >Piedra Papel o tij... completa ~ Usando condicionales</span
+      >
+      <p class="txtJustify">
+        Ahora que tenemos las opciones del usuario y la máquina, necesitamos
+        compararlas para saber quién ganó la partida. Para esto usaremos un
+        condicional switch, el cual nos permite comparar una variable con varios
+        casos. En este caso necesitamos comparar la opción del usuario con las
+        opciones de la máquina, para esto usaremos un switch con 3 casos, uno
+        para cada posible opción que escoja el usuario. Completa el código:
+      </p>
+      <pre><code class="language-js">switch (opcionUsuario) &lbrace;//*crea los 3 casos posibles usando la estructura switch y un default indicando que la opcion no es valida</code></pre>
+      <ShowSolution
+        content="switch (opcionUsuario) {\ncase 'piedra': \n break; \ncase 'papel': \n break; \ncase 'tijera':\n break; \ndefault:\n        alert('Opcion no valida');\n}"
+      />
+      <p class="txtJustify">
+        Dentro de cada caso necesitamos comparar la opción del usuario con la
+        opción de la máquina así que usaremos un condicional if para esto.
+        Dentro del caso piedra tendríamos lo siguiente:
+      </p>
+      <pre><code class="language-js">case "piedra":
+if (opcionMaquina === 'piedra') &lbrace;//Comparamos la opcion del usuario con la opcion de la maquina
+  alert('Empate'); //Si es empate mostramos un mensaje
+&rbrace; //* compara la opcion del usuario con la opcion de la maquina si este escoje papel o tijera
+//* usa la funcion correspondiente para decirle al usuario si perdio o gano
+&rbrace; else &lbrace;
+  //* muestra el mensaje faltante
+&rbrace;
+break;</code></pre>
+      <ShowSolution
+        content="case 'piedra':\nif (opcionMaquina === 'piedra') {\n  alert('Empate');\n} else if (opcionMaquina === 'papel') {\n  alert('Perdiste');\n} else {\n  alert('Ganaste');\n}\nbreak;"
+      />
+      <p class="txtJustify">
+        Ahora que ya tenemos un caso, simplemente aplicamos la misma lógica para
+        los casos faltantes, de la misma manera usamos un if para compararlo
+        según la regla del juego. Con todo esto ya tendríamos terminado el
+        juego, si quieres le puedes agregar más mensajes al juego.
+      </p>
+      <div class="card container">
+        <span class="txt-yellow">Mini lección ~ Concatenacion:</span>
+        <p class="txtJustify">
+          En JavaScript podemos concatenar(unir) strings usando el operador +,
+          esto nos permite unir strings con variables, por ejemplo aplicado con
+          el juego podemos enviar el siguiente mensaje para mejorarlo:
+        </p>
+        <pre><code class="language-js">alert('Ganaste, la maquina eligio ' + opcionMaquina);</code></pre>
+      </div>
+    </div>
+
+    <div class="card container-lg">
+      <span class="txt-blue"
+        >Piedra Papel o tij... completa ~ Usando Bucles</span
+      >
+      <p class="txtJustify">
+        El juego está completo, pero si deseamos volver a jugar tenemos que
+        ejecutar el código de nuevo, así que usaremos un bucle para repetir el
+        juego, en este caso usaremos el do while, este debe cubrir el todo el
+        código. También necesitaremos declarar una variable para saber si desea
+        salir.
+      </p>
+      <pre><code class="language-js">//*declara una variable boolean</code></pre>
+      <ShowSolution
+        content="let salir = false; //Declarando la variable salir"
+      />
+      <p class="txtJustify">
+        Ahora tendremos que generar el ciclo aperturando con un do y tendremos
+        que pedir una confirmación si desea salir antes de cerrar el ciclo con
+        while
+      </p>
+      <pre><code class="language-js">//*apertura del ciclo
+//... codigo
+//Preguntamos si desea salir, usamos confirm y asignamos si el booleano salir es true o false dependiendo de que presiono el usuario.
+salir = confirm("¿Deseas salir?") ? false : true; 
+//* cierra el ciclo con while </code></pre>
+      <ShowSolution
+        content="do {\n//... codigo\nsalir = confirm('¿Deseas salir?') ? false : true;\n} while (salir);"
+      />
+    </div>
+  </section>
+  <div>
+    <div class="card container">
+      <span class="txt-yellow">CODIGO COMPLETO</span>
+      <p class="txtLeft">
+        Asi quedaría el código. Puedes ejecutarlo en cualquier playground
+        online:
+      </p>
+      <div class="right">
+        <button class="btn green">Mostrar Solucion</button>
+      </div>
+      <div class="show" style="display: none;">
+        <pre><code class="language-js">let salir = false; //Declarando la variable salir
+do &lbrace;
+const opciones = ["piedra", "papel", "tijera"]; //Declarando las opciones del juego
+const opcionUsuario = prompt("Elige una opcion: piedra, papel o tijera"); //Declarando la opcion del usuario
+const opcionMaquina = opciones[Math.floor(Math.random() * 3)]; //Declarando la opcion de la maquina
+switch (opcionUsuario)&lbrace;
+    case "piedra":
+        if (opcionMaquina === "piedra") &lbrace;
+            alert("CPU: " + opcionMaquina + " Tú: " + opcionUsuario );
+            alert("Empate");
+        &rbrace; else if (opcionMaquina === "papel") &lbrace;
+            alert("CPU: " + opcionMaquina + " Tú: " + opcionUsuario );
+            alert("Perdiste");
+        &rbrace; else &lbrace;
+            alert("CPU: " + opcionMaquina + " Tú: " + opcionUsuario );
+            alert("Ganaste");
+        &rbrace;
+        break;
+    case "papel":
+        if (opcionMaquina === "papel") &lbrace;
+            alert("CPU: " + opcionMaquina + " Tú: " + opcionUsuario );
+            alert("Empate");
+        &rbrace; else if (opcionMaquina === "tijera") &lbrace;
+            alert("CPU: " + opcionMaquina + " Tú: " + opcionUsuario );
+            alert("Perdiste");
+        &rbrace; else &lbrace;
+            alert("CPU: " + opcionMaquina + " Tú: " + opcionUsuario );
+            alert("Ganaste");
+        &rbrace;
+        break;
+    case "tijera":
+        if (opcionMaquina === "tijera") &lbrace;
+            alert("CPU: " + opcionMaquina + " Tú: " + opcionUsuario );
+            alert("Empate");
+            &rbrace; else if (opcionMaquina === "piedra") &lbrace;
+            alert("CPU: " + opcionMaquina + " Tú: " + opcionUsuario );
+            alert("Perdiste");
+            &rbrace; else &lbrace;
+            alert("CPU: " + opcionMaquina + " Tú: " + opcionUsuario );
+            alert("Ganaste");
+            &rbrace;
+        break; 
+    default:
+        alert("Opcion no valida");
+ &rbrace;
+salir = confirm("¿Deseas salir?") ? false : true; 
+&rbrace;while (salir);
+</code></pre>
+      </div>
+      <a
+        class="btn blue"
+        href="https://codi.link/PCFET0NUWVBFIGh0bWw+DQo8aHRtbCBsYW5nPSJlbiI+DQoNCjxoZWFkPg0KICA8bWV0YSBjaGFyc2V0PSJVVEYtOCI+DQogIDxtZXRhIGh0dHAtZXF1aXY9IlgtVUEtQ29tcGF0aWJsZSIgY29udGVudD0iSUU9ZWRnZSI+DQogIDxtZXRhIG5hbWU9InZpZXdwb3J0IiBjb250ZW50PSJ3aWR0aD1kZXZpY2Utd2lkdGgsIGluaXRpYWwtc2NhbGU9MS4wIj4NCiAgPGxpbmsgcmVsPSJzdHlsZXNoZWV0IiBocmVmPSJodHRwczovL2NhY3R1cy1jc3MudmVyY2VsLmFwcC9hc3NldHMvY3NzL2NhY3R1cy5jc3MiPg0KICA8dGl0bGU+UGllZHJhIFBhcGVsIE8gVGlqZXJhPC90aXRsZT4NCjwvaGVhZD4NCg0KPGJvZHk+DQogIDxkaXYgY2xhc3M9ImNhcmQgY29udGFpbmVyLWxnIj4NCiAgICA8aDEgY2xhc3M9InR4dENlbnRlciI+UHJvYmFuZG8gZWwgY29kaWdvIGRlIFBpZWRyYSBQYXBlbCBvIFRpamVyYTwvaDE+DQogICAgPGgyIGNsYXNzPSJ0eHRDZW50ZXIiPvCfqqgg8J+ThCDinILvuI88L2gyPg0KICA8L2Rpdj4NCjwvYm9keT4NCg0KPC9odG1sPg==%7CQGltcG9ydCB1cmwoJ2h0dHBzOi8vZm9udHMuZ29vZ2xlYXBpcy5jb20vY3NzMj9mYW1pbHk9QWxiZXJ0K1NhbnM6d2dodEAzMDA7NDAwOzcwMCZkaXNwbGF5PXN3YXAnKTsNCjpyb290IHsNCiAgICAtLWZvbnQxOiAnQWxiZXJ0IFNhbnMnLCBzYW5zLXNlcmlmICFpbXBvcnRhbnQ7DQogICAgLS1mb250MjogJ0FsYmVydCBTYW5zJywgc2Fucy1zZXJpZiAhaW1wb3J0YW50Ow0KICAgIC0tZm5kOiAjZmNkYzAwICFpbXBvcnRhbnQ7DQp9DQoNCio6OnNlbGVjdGlvbiB7DQogICAgY29sb3I6IHZhcigtLWZuZCkgIWltcG9ydGFudDsNCiAgICBiYWNrZ3JvdW5kOiB2YXIoLS1wcmltYXJ5KSFpbXBvcnRhbnQ7DQp9DQoNCi5jYXJkew0KICBjb2xvcjogI2ZmZjsNCiAgYmFja2dyb3VuZC1jb2xvcjogIzIxMjMyMiAhaW1wb3J0YW50Ow0KfQ0K%7CbGV0IHNhbGlyID0gZmFsc2U7IC8vRGVjbGFyYW5kbyBsYSB2YXJpYWJsZSBzYWxpcg0KZG8gew0KY29uc3Qgb3BjaW9uZXMgPSBbInBpZWRyYSIsICJwYXBlbCIsICJ0aWplcmEiXTsgLy9EZWNsYXJhbmRvIGxhcyBvcGNpb25lcyBkZWwganVlZ28NCmNvbnN0IG9wY2lvblVzdWFyaW8gPSBwcm9tcHQoIkVsaWdlIHVuYSBvcGNpb246IHBpZWRyYSwgcGFwZWwgbyB0aWplcmEiKTsgLy9EZWNsYXJhbmRvIGxhIG9wY2lvbiBkZWwgdXN1YXJpbw0KY29uc3Qgb3BjaW9uTWFxdWluYSA9IG9wY2lvbmVzW01hdGguZmxvb3IoTWF0aC5yYW5kb20oKSAqIDMpXTsgLy9EZWNsYXJhbmRvIGxhIG9wY2lvbiBkZSBsYSBtYXF1aW5hDQpzd2l0Y2ggKG9wY2lvblVzdWFyaW8pew0KICAgIGNhc2UgInBpZWRyYSI6DQogICAgICAgIGlmIChvcGNpb25NYXF1aW5hID09PSAicGllZHJhIikgew0KICAgICAgICAgICAgYWxlcnQoIkNQVTogIiArIG9wY2lvbk1hcXVpbmEgKyAiIFTDujogIiArIG9wY2lvblVzdWFyaW8gKTsNCiAgICAgICAgICAgIGFsZXJ0KCJFbXBhdGUiKTsNCiAgICAgICAgfSBlbHNlIGlmIChvcGNpb25NYXF1aW5hID09PSAicGFwZWwiKSB7DQogICAgICAgICAgICBhbGVydCgiQ1BVOiAiICsgb3BjaW9uTWFxdWluYSArICIgVMO6OiAiICsgb3BjaW9uVXN1YXJpbyApOw0KICAgICAgICAgICAgYWxlcnQoIlBlcmRpc3RlIik7DQogICAgICAgIH0gZWxzZSB7DQogICAgICAgICAgICBhbGVydCgiQ1BVOiAiICsgb3BjaW9uTWFxdWluYSArICIgVMO6OiAiICsgb3BjaW9uVXN1YXJpbyApOw0KICAgICAgICAgICAgYWxlcnQoIkdhbmFzdGUiKTsNCiAgICAgICAgfQ0KICAgICAgICBicmVhazsNCiAgICBjYXNlICJwYXBlbCI6DQogICAgICAgIGlmIChvcGNpb25NYXF1aW5hID09PSAicGFwZWwiKSB7DQogICAgICAgICAgICBhbGVydCgiQ1BVOiAiICsgb3BjaW9uTWFxdWluYSArICIgVMO6OiAiICsgb3BjaW9uVXN1YXJpbyApOw0KICAgICAgICAgICAgYWxlcnQoIkVtcGF0ZSIpOw0KICAgICAgICB9IGVsc2UgaWYgKG9wY2lvbk1hcXVpbmEgPT09ICJ0aWplcmEiKSB7DQogICAgICAgICAgICBhbGVydCgiQ1BVOiAiICsgb3BjaW9uTWFxdWluYSArICIgVMO6OiAiICsgb3BjaW9uVXN1YXJpbyApOw0KICAgICAgICAgICAgYWxlcnQoIlBlcmRpc3RlIik7DQogICAgICAgIH0gZWxzZSB7DQogICAgICAgICAgICBhbGVydCgiQ1BVOiAiICsgb3BjaW9uTWFxdWluYSArICIgVMO6OiAiICsgb3BjaW9uVXN1YXJpbyApOw0KICAgICAgICAgICAgYWxlcnQoIkdhbmFzdGUiKTsNCiAgICAgICAgfQ0KICAgICAgICBicmVhazsNCiAgICBjYXNlICJ0aWplcmEiOg0KICAgICAgICBpZiAob3BjaW9uTWFxdWluYSA9PT0gInRpamVyYSIpIHsNCiAgICAgICAgICAgIGFsZXJ0KCJDUFU6ICIgKyBvcGNpb25NYXF1aW5hICsgIiBUw7o6ICIgKyBvcGNpb25Vc3VhcmlvICk7DQogICAgICAgICAgICBhbGVydCgiRW1wYXRlIik7DQogICAgICAgICAgICB9IGVsc2UgaWYgKG9wY2lvbk1hcXVpbmEgPT09ICJwaWVkcmEiKSB7DQogICAgICAgICAgICBhbGVydCgiQ1BVOiAiICsgb3BjaW9uTWFxdWluYSArICIgVMO6OiAiICsgb3BjaW9uVXN1YXJpbyApOw0KICAgICAgICAgICAgYWxlcnQoIlBlcmRpc3RlIik7DQogICAgICAgICAgICB9IGVsc2Ugew0KICAgICAgICAgICAgYWxlcnQoIkNQVTogIiArIG9wY2lvbk1hcXVpbmEgKyAiIFTDujogIiArIG9wY2lvblVzdWFyaW8gKTsNCiAgICAgICAgICAgIGFsZXJ0KCJHYW5hc3RlIik7DQogICAgICAgICAgICB9DQogICAgICAgIGJyZWFrOyANCiAgICBkZWZhdWx0Og0KICAgICAgICBhbGVydCgiT3BjaW9uIG5vIHZhbGlkYSIpOw0KIH0NCnNhbGlyID0gY29uZmlybSgiwr9EZXNlYXMgc2FsaXI/IikgPyBmYWxzZSA6IHRydWU7IA0KfXdoaWxlIChzYWxpcik7DQo="
+        target="_blank">Prueba el código aquí!!</a
+      >
+    </div>
+  </div>
+  <BaseNav pageNum={8} />
+
+  <script is:inline>
+    const btn = document.querySelectorAll("button");
+    const show = document.querySelectorAll(".show");
+    btn.forEach((btn, i) => {
+      btn.addEventListener("click", () => {
+        if (show[i].style.display === "none") {
+          show[i].style.display = "block";
+          btn.innerHTML = "Ocultar";
+        } else {
+          show[i].style.display = "none";
+          btn.innerHTML = "Mostrar";
+        }
+      });
+    });
+    /* const accion = document.querySelector(".btn");
+    const show = document.querySelector(".show");
+    accion.addEventListener("click", () => {
+      if (show.style.display === "none") {
+        show.style.display = "block";
+        accion.innerHTML = "Ocultar";
+      } else {
+        show.style.display = "none";
+        accion.innerHTML = "Mostrar";
+      }
+    }); */
+  </script>
+</SubjectL>

@@ -1,0 +1,61 @@
+---
+import SubjectL from "../../layouts/Subject-L.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../../config";
+import ProgressBar from "../../components/ProgressBar.astro";
+import BaseNav from "../../components/BaseNav.astro";
+---
+
+<SubjectL title={SITE_TITLE} description={SITE_DESCRIPTION}>
+  <ProgressBar progress="82" />
+  <section class="container">
+    <h2>Funciones</h2>
+    <div class="card container-lg">
+      <span class="txt-yellow">Nota</span>
+      <p class="txtJustify">
+        Las funciones son un conjunto de instrucciones que se pueden ejecutar
+        varias veces, para no tener que escribir el mismo código varias veces.
+        Además, a las funciones se le pueden pasar parámetros, permiten tener un
+        mismo código con diferentes resultados según el parámetro.
+      </p>
+    </div>
+    <div class="card container-lg">
+      <span class="txt-blue">function()</span>
+      <p class="txtJustify">
+        Para crear una función se utiliza la palabra reservada function, seguida
+        del nombre de la función, los parámetros que recibe van dentro de los
+        paréntesis y el código que ejecuta la función va dentro de las llaves.
+        Una función debe ser llamada para que se ejecute, para llamarla solo se
+        escribe el nombre de la función y los parámetros que recibe.
+      </p>
+      <pre><code class="language-js">function suma(a,b)&lbrace; //a y b son parametros
+let resultado = a + b //aqui se ejecuta el codigo de la funcion
+console.log(resultado); //aqui se imprime el resultado
+&rbrace;
+suma(2,2); //llamamos la funcion - imprime 4
+suma(3,3); // podemos llamar la funcion con diferentes parametros - imprime 6</code></pre>
+      <p class="txtJustify">
+        Podemos agregarle un <span class="txt-orange">return</span> para retornar
+        el valor. De esta forma la función no imprime el resultado, solo lo retorna
+        y lo que hace más fácil manipular los datos.
+      </p>
+      <pre><code class="language-js">function suma(a,b)&lbrace;
+let resultado = a+b;
+return 
+&rbrace;
+console.log(suma(2,2)); //imprime 4
+</code></pre>
+    </div>
+    <div class="card container-lg">
+      <span class="txt-blue">Arrow function</span>
+      <p class="txtJustify">
+        Las arrow function son una forma más corta de escribir funciones, se
+        escriben de la siguiente manera:
+      </p>
+      <pre><code class="language-js">//si la funcion solo tiene una linea de codigo se puede escribir asi
+const suma = (a,b) => a+b; 
+console.log(suma(2,2)); //imprime 4
+</code></pre>
+    </div>
+  </section>
+  <BaseNav pageNum={6} />
+</SubjectL>

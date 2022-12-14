@@ -1,0 +1,78 @@
+---
+import SubjectL from "../../layouts/Subject-L.astro";
+import ProgressBar from "../../components/ProgressBar.astro";
+import BaseNav from "../../components/BaseNav.astro";
+
+const title = "Tipos de datos";
+const description =
+  "Los tipos de datos son los que definen el tipo de dato que es una variable, en este caso, los tipos de datos son: String, Number, Boolean, Arrays y Objects.";
+---
+
+<SubjectL title={"APJS-"+title} description={description}>
+  <ProgressBar progress="0" />
+  <section class="container">
+    <h2>{title}</h2>
+    <div class="card container-lg">
+      <span class="txt-yellow">Nota</span>
+      <p class="txtJustify">
+        {description}
+      </p>
+    </div>
+    <div class="grid col-3 md-col-2 sm-col-1">
+      <div class="card">
+        <span class="txt-blue">String</span>
+        <p class="txtJustify">
+          Los strings son cadenas de texto, se pueden escribir entre comillas
+          simples o dobles.
+        </p>
+        <code class="txt-green">'Hola soy un String'</code>
+      </div>
+      <div class="card">
+        <span class="txt-blue">Number</span>
+        <p class="txtJustify">
+          Los number son números, se pueden escribir con o sin decimales.
+        </p>
+        <code class="txt-green">23.2</code>
+      </div>
+      <div class="card">
+        <span class="txt-blue">Boolean</span>
+        <p class="txtJustify">
+          Los booleanos son valores que solo pueden ser verdadero o falso.
+        </p>
+        <code class="txt-green">true <span class="txt-red">false</span></code>
+      </div>
+      <div class="card">
+        <span class="txt-blue">Arrays</span>
+        <p class="txtJustify">
+          Los arrays son listas de datos, se pueden escribir entre corchetes y
+          separados por comas.
+        </p>
+        <code class="txt-green">[0,1,1,1,2,21,1]</code>
+      </div>
+      <div class="card">
+        <span class="txt-blue">Objetos</span>
+        <p class="txtJustify">
+          Los objetos son listas de datos, se pueden escribir entre llaves y
+          separados por comas.
+        </p>
+        <code class="txt-green"
+          >&lbrace;"nombre": "Pablo", "edad": 17&rbrace;</code
+        >
+      </div>
+      <div class="card">
+        <span class="txt-yellow">Declarando Arrays y Objects</span>
+        <p class="txtJustify">
+          Los arrays y los objetos se pueden declarar de dos formas, la primera
+          es con <span class="txt-blue">const</span> y la segunda es con <span
+            class="txt-blue">let</span
+          >.
+        </p>
+        <pre><code class="language-js">const arreglo=[0,1,2,3]
+const person =
+&lbrace;"name": "Pedro",
+"edad": 22&rbrace;</code></pre>
+      </div>
+    </div>
+    <BaseNav pageNum={1} />
+  </section>
+</SubjectL>
