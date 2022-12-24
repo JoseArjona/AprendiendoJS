@@ -1,13 +1,17 @@
 ---
-import '../styles/cactus.css'; // Importamos el css general de la pagina
+import "../styles/cactus.css"; // Importamos el css general de la pagina
 
 export interface Props {
-	title: string;
-	description: string;
-	image?: string;
+  title: string;
+  description: string;
+  image?: string;
 }
 
-const { title, description, image = 'https://phx02pap002files.storage.live.com/y4mVfRvCI7-gEwQwtILinJHeBLQoYBTF9X1SUqT3b8gkVQH9xB0XoGDd-TXPfC5mZ4BxVAuMsJNW6NVELOV1dsB-HFAE7rJbh2I8fwL_ueNUW01cqZhGqaY2Mfg6thwU4oUg9ZQHfWmYmwU8pEbOCtCbt3DVnNSObt9I6YEJb-qu5hatDaX2gsqtUeJ7GQt_sk_?width=256&height=256&cropmode=none' } = Astro.props;
+const {
+  title,
+  description,
+  image = "https://phx02pap002files.storage.live.com/y4mVfRvCI7-gEwQwtILinJHeBLQoYBTF9X1SUqT3b8gkVQH9xB0XoGDd-TXPfC5mZ4BxVAuMsJNW6NVELOV1dsB-HFAE7rJbh2I8fwL_ueNUW01cqZhGqaY2Mfg6thwU4oUg9ZQHfWmYmwU8pEbOCtCbt3DVnNSObt9I6YEJb-qu5hatDaX2gsqtUeJ7GQt_sk_?width=256&height=256&cropmode=none",
+} = Astro.props;
 ---
 
 <!-- Global Metadata -->
@@ -15,6 +19,11 @@ const { title, description, image = 'https://phx02pap002files.storage.live.com/y
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <link rel="icon" type="image/png" href="/favicon.png" />
 <meta name="generator" content={Astro.generator} />
+<meta
+  data-react-helmet="true"
+  name="keywords"
+  content="guiavascript,javascript,guia de javascript"
+/>
 
 <!-- Primary Meta Tags -->
 <title>{title}</title>

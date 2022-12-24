@@ -4,7 +4,7 @@
 
 # Aprendiendo JavaScript 👋
 
-Es una pagina guia que te ayudara a repasar o comprender JavaScript basico, el objetivo no es ser un curso o una documentación, simplemente es un apoyo una recopilacion de mi conocimento sobre este lenguaje. Con el tiempo se agregara más contenido
+Es una guia de Javascript que te ayudara a repasar o comprender JavaScript basico, el objetivo no es ser un curso o una documentación, simplemente es un apoyo una recopilacion de mi conocimento sobre este lenguaje. Con el tiempo se agregara más contenido
 
 ## Tecnologias ⌨️
 
